@@ -23,7 +23,7 @@ app.use(cors({ origin: "http://localhost:5173", credentials: true }));
 app.use((req, res, next) => {
   res.setHeader(
     "Content-Security-Policy",
-    "default-src 'self'; font-src 'self' https://matear-chat-app.onrender.com;"
+    "default-src 'self'; font-src 'self' https://matear-chat-app.onrender.com; img-src 'self' https://matear-chat-app.onrender.com;"
   );
   next();
 });
