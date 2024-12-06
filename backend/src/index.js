@@ -22,8 +22,8 @@ app.use(cors({ origin: "http://localhost:5173", credentials: true }));
 
 app.use((req, res, next) => {
   res.setHeader(
-  "Content-Security-Policy",
-  "default-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' https://matear-chat-app.onrender.com; font-src 'self' https://matear-chat-app.onrender.com;"
+    "Content-Security-Policy",
+    "default-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' https://matear-chat-app.onrender.com https://res.cloudinary.com; font-src 'self' https://matear-chat-app.onrender.com;"
   );
   next();
 });
