@@ -20,6 +20,14 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(cors({ origin: "http://localhost:5173", credentials: true }));
 
+app.use((req, res, next) => {
+  res.setHeader(
+    "Content-Security-Policy",
+    "default-src 'self'; font-src 'self' https://matear-chat-app.onrender.com;"
+  );
+  next();
+});
+
 app.use("/api/auth", authRoutes);
 app.use("/api/messages", messageRoutes);
 
